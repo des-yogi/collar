@@ -1,14 +1,74 @@
 <!--DEV
-
-Для использования этого файла как шаблона:
-
 @ @include('blocks/start-coop-modal/start-coop-modal.html')
-
-(Нужно убрать пробел между символами @)
-Подробнее: https://www.npmjs.com/package/gulp-file-include
-
-
-
-<div class="start-coop-modal">content</div>
-
 -->
+
+<!-- Start Cooperation Modal -->
+<div class="modal fade  start-coop-modal" id="startCoopModal" tabindex="-1" aria-labelledby="startCoopModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen-sm-down modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content  start-coop-modal__content">
+      <div class="modal-header  start-coop-modal__header">
+        <div class="start-coop-modal__header-inner">
+          <!-- <span>Закрыть</span> -->
+          <h5 class="modal-title  h3  start-coop-modal__title" id="startCoopModalLabel">Загрузить каталог</h5>
+          <button type="button" class="close  close--regular" data-bs-dismiss="modal" aria-label="Close">
+            <svg width="24" height="24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#close"></use></svg>
+          </button>
+        </div>
+        <p style="margin-top:0;">Заполните краткую форму и мы отправим Вам каталог</p>
+      </div>
+
+      <div class="modal-body  start-coop-modal__body">
+        <form id="coopForm" class="start-coop-modal__form" action="" method="post">
+
+          @@include('../../blocks/field-text/field-text.html', {
+            "type": "text",
+            "placeholder": "Name",
+            "name": "name"
+          })
+
+          @@include('../../blocks/field-text/field-text.html', {
+            "type": "tel",
+            "placeholder": "",
+            "name": "tel",
+            "imaskClass": "phone-mask"
+          })
+
+          @@include('../../blocks/field-text/field-text.html', {
+            "type": "email",
+            "placeholder": "Email",
+            "name": "email"
+          })
+
+          @@include('../../blocks/field-text/field-text.html', {
+            "type": "text",
+            "placeholder": "Страна",
+            "name": "country"
+          })
+
+          <label class="field-text">
+            <span class="field-text__input-wrap">
+              <textarea class="field-text__input" id="af_message" name="message" placeholder="Введите текст сообщения" rows="1"></textarea>
+              <span class="field-text__help-text error error_message">
+                <!-- [[+fi.error.message]] -->
+              </span>
+            </span>
+          </label>
+
+        </form>
+      </div>
+
+      <div class="modal-footer  start-coop-modal__footer  tart-coop-modal__agreement">
+        <div class="field-checkbox">
+          <label class="field-checkbox__name">
+            <input class="field-checkbox__input" type="checkbox" name="agreement" checked>
+            <span class="field-checkbox__name-text">Даю согласие на <a href="#">обработку и использование персональных данных</a></span>
+          </label>
+        </div>
+        <button form="coopForm" type="submit" class="btn">
+          <span>Отправить</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>

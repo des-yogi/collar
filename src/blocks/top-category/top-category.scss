@@ -1,9 +1,29 @@
-// В этом файле должны быть стили для БЭМ-блока top-category, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .top-category {
+  padding-top: 72px;
+  padding-bottom: 72px - 24px;
+
+  @media (min-width: $screen-md) {
+    padding-top: 128px;
+    padding-bottom: 128px - 32px;
+  }
 
   $block-name:                &; // #{$block-name}__element
 
+  &__title {
+    margin-bottom: 32px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__col {
+    @include col(xs, 12);
+    @include col(md, 6);
+    margin-bottom: 24px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 32px;
+    }
+  }
 }

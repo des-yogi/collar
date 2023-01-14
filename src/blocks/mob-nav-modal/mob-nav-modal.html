@@ -1,0 +1,47 @@
+<!--DEV
+@ @include('blocks/mob-nav-modal/mob-nav-modal.html')
+-->
+
+<!-- Modal Mob Navigation -->
+<section class="modal fade  mob-nav-modal" id="mobNavModal" tabindex="-1" aria-labelledby="mobNavModalLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-fullscreen-xxl-down">
+    <div class="modal-content  mob-nav-modal__content">
+      <div class="modal-header  mob-nav-modal__header">
+        <h5 class="modal-title  visually-hidden" id="mobNavModalLabel">Collar Company</h5>
+        <a href="index.html" class="logo" title="Collar">
+          <img src="img/collar-logo.svg" alt="logo" width="63" height="56">
+        </a>
+        <a href="tel:+0800301977" class="mob-nav-modal__link-tel">
+          <span>0 800 30 19 77</span>
+        </a>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <svg width="24" height="24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#close"></use></svg>
+        </button>
+      </div>
+      <div class="modal-body  mob-nav-modal__body">
+        <nav class="mob-nav-modal__nav">
+          <ul class="list-nostyled  mob-nav-modal__list">
+            <li class="mob-nav-modal__item">
+              <a href="index.html#brands" class="mob-nav-modal__link">Наши бренды</a>
+            </li>
+            <li class="mob-nav-modal__item">
+              <a href="index.html#about" class="mob-nav-modal__link">О компании</a>
+            </li>
+            <li class="mob-nav-modal__item">
+              <a href="index.html#products" class="mob-nav-modal__link">Зоотовары</a>
+            </li>
+            <li class="mob-nav-modal__item">
+              <a href="index.html#coop" class="mob-nav-modal__link">Сотрудничество</a>
+            </li>
+            <li class="mob-nav-modal__item">
+              <a href="index.html#faq" class="mob-nav-modal__link">FAQ</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="modal-footer  mob-nav-modal__footer">
+        @@include('../../blocks/social-links/social-links.html')
+      </div>
+    </div>
+  </div>
+</section>

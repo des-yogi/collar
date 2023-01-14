@@ -1,81 +1,89 @@
-// В этом файле должны быть стили для БЭМ-блока btn, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .btn {
 
   $block-name:                &; // #{$block-name}__element
 
   box-sizing: border-box;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
-  // padding: $field-padding-vertical  $field-padding-horizontal;
-  white-space: nowrap;
-  vertical-align: middle;
-  user-select: none;
-  text-align: center;
-  font-size: 1em;
+  padding: $field-padding-vertical  $field-padding-horizontal;
+  font-size: 16px;
+  font-weight: 600;
   font-family: inherit;
   line-height: $line-height;
+  text-align: center;
   text-decoration: none;
   text-transform: none;
-  color: $text-color;
+  white-space: nowrap;
+  color: $white;
+  background-color: $black;
   border-radius: $border-radius;
-  border: 1px solid $gray-lighter;
-  background-color: $gray-lightest;
-  background-image: none;
+  border: 2px solid $black;
+  user-select: none;
   cursor: pointer;
+  transition: all 0.25s;
 
   &:hover,
   &:focus {
     text-decoration: none;
     color: $text-color;
-    // background-color: darken($gray-lightest, 10%);
-    // border-color: darken($gray-lighter, 12%);
+    background-color: $white;
   }
 
-  &:active,
-  &:focus {
+  //&:active,
+  //&:focus {
     // @include field-focus;
-  }
+  //}
 
   &--disabled,
   &:disabled {
     // opacity: $opacity;
     cursor: not-allowed;
-    color: $text-color;
-    background-color: $gray-lightest;
-    border-color: $gray-lighter;
+    color: $text-muted;
+    background-color: $block-bg;
+    border-color: $block-bg;
 
     @at-root a.btn--disabled {
       pointer-events: none;
     }
   }
 
-  // &__icon {
-  //   display: inline-block;
-  //   vertical-align: middle;
-  // }
+  &--outline {
+    color: $black;
+    background-color: $white;
+    //border-color: $white;
 
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: $white;
+      background-color: $text-color;
+      border-color: $block-bg;
 
+      svg {
+        transform: translateX(0.5em);
+      }
+    }
 
-  // &--main {
-  //   color: #fff;
-  //   background-color: $color-main;
-  //   border: 1px solid $color-main;
+    &--disabled,
+    &:disabled {
+      // opacity: $opacity;
+      cursor: not-allowed;
+      color: $text-muted;
+      background-color: $block-bg;
+      border-color: $block-bg;
 
-  //   &:hover,
-  //   &:focus {
-  //     color: #fff;
-  //     background-color: darken($color-main, 10%);
-  //     border-color: darken($color-main, 12%);
-  //   }
+      @at-root a.btn--disabled {
+        pointer-events: none;
+      }
+    }
 
-  //   &--disabled,
-  //   &:disabled {
-  //     color: #fff;
-  //     background-color: $color-main;
-  //     border-color: $color-main;
-  //   }
-  // }
+    svg {
+      width: 24px;
+      height: 24px;
+      margin-left: 8px;
+      transition: transform 0.25s;
+    }
+  }
 }

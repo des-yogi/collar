@@ -3,7 +3,7 @@
   $block-name:                &; // #{$block-name}__element
 
   display: block;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
 
   &__title {
     display: block;
@@ -25,7 +25,7 @@
   &__name {
     position: relative;
     display: inline-block;
-    padding-left: 32px;
+    padding-left: 40px;
     //margin-right: 0.6em;
     font-weight: 400;
     line-height: $line-height;
@@ -45,15 +45,16 @@
     &::before {
       content: '';
       position: absolute;
-      top: 0;
+      top: 2px;
       left: 0;
-      width: 22px;
-      height: 22px;
+      width: 24px;
+      height: 24px;
       border: 1px solid $border-color;
-      border-radius: $border-radius / 2;
+      border-radius: 0;
 
       @at-root input:checked ~ & {
-        background-color: $border-color;
+        //background-color: $border-color;
+        border-color: $black;
       }
     }
 
@@ -64,19 +65,16 @@
     &::after {
       content: '';
       position: absolute;
-      top: 5px;
-      left: 5px;
+      top: 8px;
+      left: 6px;
       width: 12px;
-      height: 8px;
+      height: 12px;
       opacity: 0;
-      border-left: 2px solid $white;
-      border-bottom: 2px solid $white;
-      transform: rotate(-45deg);
+      background-color: $black;
       transition: opacity $transition-time;
 
       @at-root input:checked ~ & {
         opacity: 1;
-        border-color: $white;
       }
     }
   }
@@ -104,5 +102,40 @@
 
   &__help-text {
     @include field-help-text;
+  }
+
+  &--dark {
+
+    #{$block-name}__name-text {
+      color: rgba(255, 255, 255, 0.8);
+
+      &::before {
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+    }
+
+    #{$block-name}__name {
+
+      input:checked ~ #{$block-name}__name-text {
+        color: rgba(255, 255, 255, 1);
+
+        &::before {
+          border-color: rgba(255, 255, 255, 1);
+        }
+
+        &::after {
+          background-color: $white;
+          opacity: 1;
+        }
+      }
+
+      input:focus ~ #{$block-name}__name-text {
+        color: rgba(255, 255, 255, 1);
+
+        &::before {
+          border-color: $white;
+        }
+      }
+    }
   }
 }

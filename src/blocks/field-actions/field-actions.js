@@ -1,5 +1,4 @@
 (function () {
-  //const agreementElems = document.querySelectorAll('.contacts__agreement');
   const agreementElems = document.querySelectorAll('[class$="__agreement"]');
 
   for (let i = 0; i < agreementElems.length; i++) {

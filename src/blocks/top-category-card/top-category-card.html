@@ -1,14 +1,24 @@
 <!--DEV
-
-Для использования этого файла как шаблона:
-
-@ @include('blocks/top-category-card/top-category-card.html')
-
-(Нужно убрать пробел между символами @)
-Подробнее: https://www.npmjs.com/package/gulp-file-include
-
-
-
-<div class="top-category-card">content</div>
-
+@ @include('blocks/top-category-card/top-category-card.html', {
+  "title": "",
+  "text": "",
+  "img": "",
+  "id": "",
+})
 -->
+
+<article class="top-category-card">
+  <div class="top-category-card__text">
+    <h3 class="h4">@@title</h3>
+    <p>@@text</p>
+    <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#topSellModal">
+      <span>Посмотреть товары</span>
+    </button>
+  </div>
+  <div class="top-category-card__img">
+    <picture>
+      <source data-srcset="img/@@img.webp" type="image/webp">
+      <img class="b-lazy" data-src="img/@@img.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="@@title" width="196" height="244">
+    </picture>
+  </div>
+</article>

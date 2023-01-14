@@ -1,8 +1,152 @@
-// В этом файле должны быть стили для БЭМ-блока page-header, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .page-header {
+  position: relative;
+  z-index: 10;
+  background-color: transparent;
+  padding-bottom: 23px;
+  padding-top: 24px;
+  border-bottom: 1px solid rgba($white, 0.2);
+  transition: background-color 0.35s;
+
+  &.is-active {
+
+    @media (min-width: $screen-md) {
+      background-color: $white;
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 0.225em 0.75em rgba($black, 0.3);
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: -1;
+  }
 
   $block-name:                &; // #{$block-name}__element
+
+  &__logo-col {
+    @include col(xs, 4);
+    @include col(xl, 8);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__service-col {
+    @include col(xs, 8);
+    @include col(xl, 4);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-left: 0;
+
+    @media (min-width: $screen-xl) {
+      padding-left: 0;
+    }
+  }
+
+  &__service {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__contact-us {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px solid $secondary-color;
+    background-color: $secondary-color;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: $secondary-color;
+      background-color: $white;
+    }
+
+    @media (max-width: $screen-md - 1) {
+      display: none;
+    }
+
+    @media (min-width: $screen-xl) {
+      order: 1;
+      margin-left: 16px;
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: transparent;
+    color: $text-color;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: $secondary-color !important;
+    }
+
+    &--tel {
+
+      @media (min-width: $screen-md) and (max-width: $screen-xl - 1) {
+        margin-left: 16px;
+      }
+    }
+  }
+
+  &--index {
+
+    .burger {
+      color: $white;
+    }
+
+    #{$block-name}__link {
+      color: $white;
+    }
+
+    &.is-active {
+
+      @media (min-width: $screen-md) {
+        .burger {
+          color: initial;
+        }
+
+        #{$block-name}__link {
+          color: initial;
+        }
+      }
+    }
+  }
+}
+
+.sticky {
+
+  @media (min-width: $screen-md) {
+    position: sticky;
+    will-change: transform;
+
+    &--top {
+      top: 0;
+    }
+  }
 }

@@ -13,12 +13,428 @@
   <div class="page__inner">
 
     <div class="page__content">
-      @@include('blocks/page-header/page-header.html')
 
-      <main role="main">
+      @@include('blocks/page-header/page-header.html', {
+        "addClass": "page-header--index"
+      })
 
-        <div class="container">
-        </div>
+      <main class="main-content">
+
+        <section class="hero">
+          <h1 class="visually-hidden">Компания Collar. Товары для животных оптом и в розницу.</h1>
+
+          <picture>
+            <source srcset="img/hero-img-1920x1024.webp" media="(min-width: 768px)" type="image/webp">
+            <source srcset="img/hero-img-1920x1024.jpg" media="(min-width: 768px)">
+              <!-- 1920x1024px -->
+            <source srcset="img/hero-img-1920x1024.webp" media="(min-width: 360px)" type="image/webp">
+            <source srcset="img/hero-img-1920x1024.jpg" media="(min-width: 360px)">
+              <!-- 1200x640px -->
+            <img class="hero__img" src="img/hero-img-1920x1024.jpg" alt="Dog" width="1920" height="1024">
+          </picture>
+
+          <div class="container  hero__text">
+            <p class="display-1">Получи уникальные преимущества нашего партнёрства</p>
+            <a href="#" class="btn  btn--outline  hero__link">
+              <span>Работать с нами</span>
+              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-right"></use></svg>
+            </a>
+          </div>
+        </section>
+
+        @@include('blocks/features/features.html')
+
+        @@include('blocks/brands/brands.html')
+
+        @@include('blocks/about/about.html')
+
+        <section class="container  top-category">
+          <h2 class="top-category__title">Топовые категории товаров</h2>
+
+          <div class="row" role="list">
+
+            <div class="top-category__col" role="listitem">
+              @@include('blocks/top-category-card/top-category-card.html', {
+                "title": "Аквариумистика",
+                "text": "Оборудование, освещение, наборы и аквариумы",
+                "img": "top-cat-01",
+                "id": "",
+              })
+            </div>
+
+            <div class="top-category__col" role="listitem">
+              @@include('blocks/top-category-card/top-category-card.html', {
+                "title": "Одежда для животных",
+                "text": "Куртки, комбинезоны, футболки, дождевики",
+                "img": "top-cat-02",
+                "id": "",
+              })
+            </div>
+
+            <div class="top-category__col" role="listitem">
+              @@include('blocks/top-category-card/top-category-card.html', {
+                "title": "Игрушки для животных",
+                "text": "Широкий выбор игрушек для собак самых разных пород",
+                "img": "top-cat-03",
+                "id": "",
+              })
+            </div>
+
+            <div class="top-category__col" role="listitem">
+              @@include('blocks/top-category-card/top-category-card.html', {
+                "title": "Амуниция",
+                "text": "Широкий выбор игрушек для собак самых разных пород",
+                "img": "top-cat-04",
+                "id": "",
+              })
+            </div>
+
+            <div class="top-category__col" role="listitem">
+              @@include('blocks/top-category-card/top-category-card.html', {
+                "title": "Лежанки, сумки переноски",
+                "text": "Широкий выбор лежанок и сумок",
+                "img": "top-cat-05",
+                "id": "",
+              })
+            </div>
+
+          </div>
+        </section>
+
+        <section id="products" class="container  top-selling">
+
+          <div class="row">
+            <div class="top-selling__wrapper-col">
+              <h2 class="top-selling__title">Топ продаж</h2>
+
+              <div class="swiper  top-selling__slider">
+
+                <div class="swiper-controls">
+                  <button class="swiper-button-prev" type="button"></button>
+                  <button class="swiper-button-next" type="button"></button>
+                  <div class="swiper-pagination"></div>
+                </div>
+
+                <div class="swiper-wrapper">
+
+                  <article class="swiper-slide  top-selling__slide">
+                    <div class="top-selling__slide-inner-row">
+
+                      <div class="top-selling__slide-text-col">
+                        <div class="top-selling__slide-text">
+                          <h3 class="top-selling__slide-title">Вентилятор aFAN та aFAN PRO</h3>
+                          <p class="top-selling__slide-intro">Вентилятор охолодження aFAN — для ефективного охолодження акваріумів, а також для організації циркуляції повітря у тераріумах будь-якого типу.</p>
+                          <figure class="top-selling__slide-figure">
+                            <figcaption class="Заголовок"></figcaption>
+                            <div class="embed-responsive embed-responsive--1-1  top-selling__slide-img">
+                              <picture>
+                                <source data-srcset="img/product.webp" media="(min-width: 1280px)" type="image/webp">
+                                <source data-srcset="img/product.jpg" media="(min-width: 1280px)">
+                                  <!-- 620 -->
+                                <source data-srcset="img/product.webp" media="(min-width: 768px)" type="image/webp">
+                                <source data-srcset="img/product.jpg" media="(min-width: 768px)">
+                                  <!-- 1150 -->
+                                <source data-srcset="img/product.webp" media="(min-width: 480px)" type="image/webp">
+                                <source data-srcset="img/product.jpg" media="(min-width: 480px)">
+                                  <!-- 900 -->
+                                <source data-srcset="img/product.webp" media="(min-width: 360px)" type="image/webp">
+                                <source data-srcset="img/product.jpg" media="(min-width: 360px)">
+                                  <!-- 720 -->
+                                <img data-src="img/product.jpg" class="swiper-lazy" alt="Название продукта" width="1150" height="1150">
+                              </picture>
+                              <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                            </div>
+                          </figure>
+                          <p><strong>Преимущества:</strong></p>
+                          <ul>
+                            <li>Ефективне охолодження при мінімальних розмірах</li>
+                            <li>Кріплення із зовнішнього боку акваріума перешкоджає передчасному виходу вентилятора з ладу від підвищеної вологості та корозії</li>
+                            <li>Дві швидкості обертання: стандартна та підвищена</li>
+                            <li>Кріплення на акваріумах із товщиною стінки до 8 мм</li>
+                            <li>Можливе живлення від USB-роз'єму комп'ютера або ноутбука</li>
+                            <li>Версія PRO оснащена термостатом і дозволяє налаштувати роботу вентилятора в автоматичному режимі.</li>
+                            <li>Регулятор на корпусі дозволяє задати температуру автоматичного вмикання/ вимкнення вентилятора в діапазоні від 20 °С до 30 °С</li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="top-selling__slide-img-col">
+                        <div class="embed-responsive embed-responsive--1-1  top-selling__slide-img">
+                          <picture>
+                            <source data-srcset="img/product.webp" media="(min-width: 1280px)" type="image/webp">
+                            <source data-srcset="img/product.jpg" media="(min-width: 1280px)">
+                              <!-- 620 -->
+                            <source data-srcset="img/product.webp" media="(min-width: 768px)" type="image/webp">
+                            <source data-srcset="img/product.jpg" media="(min-width: 768px)">
+                              <!-- 1150 -->
+                            <source data-srcset="img/product.webp" media="(min-width: 480px)" type="image/webp">
+                            <source data-srcset="img/product.jpg" media="(min-width: 480px)">
+                              <!-- 900 -->
+                            <source data-srcset="img/product.webp" media="(min-width: 360px)" type="image/webp">
+                            <source data-srcset="img/product.jpg" media="(min-width: 360px)">
+                              <!-- 720 -->
+                            <img data-src="img/product.jpg" class="swiper-lazy" alt="Название продукта" width="1150" height="1150">
+                          </picture>
+                          <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </article>
+
+                  <article class="swiper-slide  top-selling__slide">
+                    <div class="top-selling__slide-inner-row">
+
+                      <div class="top-selling__slide-text-col">
+                        <div class="top-selling__slide-text">
+                          <h3 class="top-selling__slide-title">Вентилятор aFAN та aFAN PRO</h3>
+                          <p class="top-selling__slide-intro">Вентилятор охолодження aFAN — для ефективного охолодження акваріумів, а також для організації циркуляції повітря у тераріумах будь-якого типу.</p>
+                          <figure class="top-selling__slide-figure">
+                            <figcaption class="Заголовок"></figcaption>
+                            <div class="embed-responsive embed-responsive--1-1  top-selling__slide-img">
+                              <picture>
+                                <source data-srcset="img/product.webp" media="(min-width: 1280px)" type="image/webp">
+                                <source data-srcset="img/product.jpg" media="(min-width: 1280px)">
+                                  <!-- 620 -->
+                                <source data-srcset="img/product.webp" media="(min-width: 768px)" type="image/webp">
+                                <source data-srcset="img/product.jpg" media="(min-width: 768px)">
+                                  <!-- 1150 -->
+                                <source data-srcset="img/product.webp" media="(min-width: 480px)" type="image/webp">
+                                <source data-srcset="img/product.jpg" media="(min-width: 480px)">
+                                  <!-- 900 -->
+                                <source data-srcset="img/product.webp" media="(min-width: 360px)" type="image/webp">
+                                <source data-srcset="img/product.jpg" media="(min-width: 360px)">
+                                  <!-- 720 -->
+                                <img data-src="img/product.jpg" class="swiper-lazy" alt="Название продукта" width="1150" height="1150">
+                              </picture>
+                              <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                            </div>
+                          </figure>
+                          <p><strong>Преимущества:</strong></p>
+                          <ul>
+                            <li>Ефективне охолодження при мінімальних розмірах</li>
+                            <li>Кріплення із зовнішнього боку акваріума перешкоджає передчасному виходу вентилятора з ладу від підвищеної вологості та корозії</li>
+                            <li>Дві швидкості обертання: стандартна та підвищена</li>
+                            <li>Кріплення на акваріумах із товщиною стінки до 8 мм</li>
+                            <li>Можливе живлення від USB-роз'єму комп'ютера або ноутбука</li>
+                            <li>Версія PRO оснащена термостатом і дозволяє налаштувати роботу вентилятора в автоматичному режимі.</li>
+                            <li>Регулятор на корпусі дозволяє задати температуру автоматичного вмикання/ вимкнення вентилятора в діапазоні від 20 °С до 30 °С</li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="top-selling__slide-img-col">
+                        <div class="embed-responsive embed-responsive--1-1  top-selling__slide-img">
+                          <picture>
+                            <source data-srcset="img/product.webp" media="(min-width: 1280px)" type="image/webp">
+                            <source data-srcset="img/product.jpg" media="(min-width: 1280px)">
+                              <!-- 620 -->
+                            <source data-srcset="img/product.webp" media="(min-width: 768px)" type="image/webp">
+                            <source data-srcset="img/product.jpg" media="(min-width: 768px)">
+                              <!-- 1150 -->
+                            <source data-srcset="img/product.webp" media="(min-width: 480px)" type="image/webp">
+                            <source data-srcset="img/product.jpg" media="(min-width: 480px)">
+                              <!-- 900 -->
+                            <source data-srcset="img/product.webp" media="(min-width: 360px)" type="image/webp">
+                            <source data-srcset="img/product.jpg" media="(min-width: 360px)">
+                              <!-- 720 -->
+                            <img data-src="img/product.jpg" class="swiper-lazy" alt="Название продукта" width="1150" height="1150">
+                          </picture>
+                          <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </article>
+
+                  <article class="swiper-slide  top-selling__slide">
+                    <div class="top-selling__slide-inner-row">
+
+                      <div class="top-selling__slide-text-col">
+                        <div class="top-selling__slide-text">
+                          <h3 class="top-selling__slide-title">Вентилятор aFAN та aFAN PRO</h3>
+                          <p class="top-selling__slide-intro">Вентилятор охолодження aFAN — для ефективного охолодження акваріумів, а також для організації циркуляції повітря у тераріумах будь-якого типу.</p>
+                          <figure class="top-selling__slide-figure">
+                            <figcaption class="Заголовок"></figcaption>
+                            <div class="embed-responsive embed-responsive--1-1  top-selling__slide-img">
+                              <picture>
+                                <source data-srcset="img/product.webp" media="(min-width: 1280px)" type="image/webp">
+                                <source data-srcset="img/product.jpg" media="(min-width: 1280px)">
+                                  <!-- 620 -->
+                                <source data-srcset="img/product.webp" media="(min-width: 768px)" type="image/webp">
+                                <source data-srcset="img/product.jpg" media="(min-width: 768px)">
+                                  <!-- 1150 -->
+                                <source data-srcset="img/product.webp" media="(min-width: 480px)" type="image/webp">
+                                <source data-srcset="img/product.jpg" media="(min-width: 480px)">
+                                  <!-- 900 -->
+                                <source data-srcset="img/product.webp" media="(min-width: 360px)" type="image/webp">
+                                <source data-srcset="img/product.jpg" media="(min-width: 360px)">
+                                  <!-- 720 -->
+                                <img data-src="img/product.jpg" class="swiper-lazy" alt="Название продукта" width="1150" height="1150">
+                              </picture>
+                              <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                            </div>
+                          </figure>
+                          <p><strong>Преимущества:</strong></p>
+                          <ul>
+                            <li>Ефективне охолодження при мінімальних розмірах</li>
+                            <li>Кріплення із зовнішнього боку акваріума перешкоджає передчасному виходу вентилятора з ладу від підвищеної вологості та корозії</li>
+                            <li>Дві швидкості обертання: стандартна та підвищена</li>
+                            <li>Кріплення на акваріумах із товщиною стінки до 8 мм</li>
+                            <li>Можливе живлення від USB-роз'єму комп'ютера або ноутбука</li>
+                            <li>Версія PRO оснащена термостатом і дозволяє налаштувати роботу вентилятора в автоматичному режимі.</li>
+                            <li>Регулятор на корпусі дозволяє задати температуру автоматичного вмикання/ вимкнення вентилятора в діапазоні від 20 °С до 30 °С</li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="top-selling__slide-img-col">
+                        <div class="embed-responsive embed-responsive--1-1  top-selling__slide-img">
+                          <picture>
+                            <source data-srcset="img/product.webp" media="(min-width: 1280px)" type="image/webp">
+                            <source data-srcset="img/product.jpg" media="(min-width: 1280px)">
+                              <!-- 620 -->
+                            <source data-srcset="img/product.webp" media="(min-width: 768px)" type="image/webp">
+                            <source data-srcset="img/product.jpg" media="(min-width: 768px)">
+                              <!-- 1150 -->
+                            <source data-srcset="img/product.webp" media="(min-width: 480px)" type="image/webp">
+                            <source data-srcset="img/product.jpg" media="(min-width: 480px)">
+                              <!-- 900 -->
+                            <source data-srcset="img/product.webp" media="(min-width: 360px)" type="image/webp">
+                            <source data-srcset="img/product.jpg" media="(min-width: 360px)">
+                              <!-- 720 -->
+                            <img data-src="img/product.jpg" class="swiper-lazy" alt="Название продукта" width="1150" height="1150">
+                          </picture>
+                          <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </article>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </section>
+
+        <section id="coop" class="container  start-coop">
+          <div class="start-coop__inner-row">
+
+            <div class="start-coop__form-col  dark">
+
+              <div class="start-coop__form-inner">
+                <div class="start-coop__form-wrapper">
+                  <h2 class="start-coop__title">Rozpocznij współpracę</h2>
+                  <p class="start-coop__intro">Заполните краткую форму, мы свяжемся с вами в ближайшее время и обсудим все детали.</p>
+
+                  <form class="start-coop__form" action="#" method="post">
+
+                    <div class="row">
+
+                      <div class="start-coop__input-col">
+                        @@include('blocks/field-text/field-text.html', {
+                          "type": "text",
+                          "placeholder": "Name",
+                          "name": "name"
+                        })
+                      </div>
+
+                      <div class="start-coop__input-col">
+                        @@include('blocks/field-text/field-text.html', {
+                          "type": "tel",
+                          "placeholder": "",
+                          "name": "tel",
+                          "imaskClass": "phone-mask"
+                        })
+                      </div>
+
+                      <div class="start-coop__input-col">
+                        @@include('blocks/field-text/field-text.html', {
+                          "type": "email",
+                          "placeholder": "Email",
+                          "name": "email"
+                        })
+                      </div>
+
+                      <div class="start-coop__input-col">
+                        @@include('blocks/field-text/field-text.html', {
+                          "type": "text",
+                          "placeholder": "Страна",
+                          "name": "country"
+                        })
+                      </div>
+
+                    </div>
+
+                    <label class="field-text">
+                      <span class="field-text__input-wrap">
+                        <textarea class="field-text__input" id="af_message" name="message" placeholder="Введите текст сообщения" rows="1"></textarea>
+                        <span class="field-text__help-text error error_message">
+                          <!-- [[+fi.error.message]] -->
+                        </span>
+                      </span>
+                    </label>
+
+                    <div class="start-coop__agreement">
+
+                      <div class="field-checkbox  field-checkbox--dark">
+
+                        <label class="field-checkbox__name">
+                          <input class="field-checkbox__input" type="checkbox" name="agreement" checked>
+                          <span class="field-checkbox__name-text">Даю согласие на <a href="#">обработку и использование персональных данных</a></span>
+                        </label>
+                      </div>
+
+                      <button class="btn  btn--outline" type="submit" name="submit">
+                        <span>Отправить</span>
+                      </button>
+
+                    </div>
+
+                  </form>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="start-coop__catalog-col">
+
+              <div class="start-coop__catalog-inner">
+
+                <div class="start-coop__catalog">
+                  <h3 class="start-coop__catalog-title">Сотрудничество с COLLAR Company</h3>
+                  <p class="start-coop__catalog-intro">COLLAR Company – это украинский производитель зоотоваров. Мы существуем с 1995 года, и за это время успели создать 13 известных во всем мире брендов. Нашими партнерами являются владельцы зообизнесов из 78 стран мира.</p>
+                  <picture>
+                    <source data-srcset="img/cooperation.webp" media="(min-width: 1200px)" type="image/webp">
+                    <source data-srcset="img/cooperation.png" media="(min-width: 1200px)">
+                    <!-- 274x212 -->
+                    <source data-srcset="img/cooperation.webp" media="(min-width: 360px)" type="image/webp">
+                    <source data-srcset="img/cooperation.png" media="(min-width: 360px)">
+                    <!-- 548x424 -->
+                    <img class="b-lazy" data-src="img/cooperation.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Cover and spread of the catalog" width="274" height="212">
+                  </picture>
+
+                  <div class="start-coop__catalog-action">
+                    <h4 class="start-coop__catalog-subtitle">Загрузить каталог</h4>
+                    <p>Обновленный каталог всей продукции Компании COLLAR на 2023</p>
+
+                    <button class="btn start-coop__catalog-btn" type="button" data-bs-toggle="modal" data-bs-target="#startCoopModal" data-bs-whatever="Скачать каталог">
+                      <span>Скачать каталог</span>
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        @@include('blocks/faq/faq.html')
 
       </main>
 
@@ -29,6 +445,14 @@
     </div>
 
   </div>
+
+
+  @@include('blocks/mob-nav-modal/mob-nav-modal.html')
+
+  @@include('blocks/start-coop-modal/start-coop-modal.html')
+
+  @@include('blocks/top-selling-modal/top-selling-modal.html')
+
 
   @@include('_include/page_bottom.html')
 
