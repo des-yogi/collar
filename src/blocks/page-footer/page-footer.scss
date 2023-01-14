@@ -1,8 +1,83 @@
-// В этом файле должны быть стили для БЭМ-блока page-footer, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .page-footer {
+  padding-top: 24px;
+  color: $white;
+  background-color: $text-color;
 
   $block-name:                &; // #{$block-name}__element
+
+  a:not(.btn) {
+    color: currentColor;
+
+    &:hover,
+    &:focus {
+      color: $link-color;
+      text-decoration: inherit;
+    }
+  }
+
+  &__main {
+    padding-bottom: 24px;
+
+    @media (max-width: $screen-md - 1) {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__info-col {
+    @include col(xs, 12);
+    @include col(md, 6);
+  }
+
+  &__social-col {
+    @include col(xs, 12);
+    @include col(md, 6);
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @media (max-width: $screen-md - 1) {
+      margin-bottom: 24px !important;
+    }
+  }
+
+  &__docs {
+    display: flex;
+    align-items: baseline;
+    padding: 16px 0;
+    font-size: 14px;
+    border-top: 1px solid rgba(255, 255, 250, 0.3);
+
+    @media (max-width: $screen-md - 1) {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-bottom: 88px;
+    }
+
+    & > * + * {
+      margin-left: 32px;
+
+      @media (max-width: $screen-md - 1) {
+        margin-top: 16px;
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__btn-wrapper {
+
+    @media (min-width: $screen-md) {
+      display: none;
+    }
+
+    .btn {
+      position: fixed;
+      z-index: 1;
+      bottom: 16px;
+      width: calc(100% - 32px);
+      max-width: 100%;
+    }
+  }
 }

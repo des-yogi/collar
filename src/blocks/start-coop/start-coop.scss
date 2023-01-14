@@ -1,9 +1,150 @@
-// В этом файле должны быть стили для БЭМ-блока start-coop, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .start-coop {
+
+  @media (min-width: $screen-xl) {
+    background: linear-gradient(to right, $black 0%, $black 50%, $block-bg 50%);
+  }
 
   $block-name:                &; // #{$block-name}__element
 
+  &__inner-row {
+    @include row(
+      $xs-grid-gutter:  $grid-gutter-width,
+      $sm-grid-gutter:  $grid-gutter-width,
+      $md-grid-gutter:  $grid-gutter-width,
+      $lg-grid-gutter:  $grid-gutter-width,
+      $xl-grid-gutter:  $grid-gutter-width,
+      $xxl-grid-gutter: $grid-gutter-width
+    );
+  }
+
+  &__form-col {
+    @include col(xs, 12);
+    @include col(xl, 6);
+
+    &.dark {
+      color: $white;
+      background-color: $black;
+
+      .btn--outline {
+        border-color: $white;
+      }
+    }
+  }
+
+  &__form-inner {
+    @include row(
+      $xs-grid-gutter:  0,
+      $sm-grid-gutter:  0,
+      $md-grid-gutter:  $grid-gutter-width,
+      $lg-grid-gutter:  0,
+      $xl-grid-gutter:  0,
+      $xxl-grid-gutter: 0
+    );
+  }
+
+  &__catalog-col {
+    @include col(xs, 12);
+    @include col(xl, 6);
+    background-color: $block-bg;
+  }
+
+  &__catalog-inner {
+    @include row(
+      $xs-grid-gutter:  0,
+      $sm-grid-gutter:  0,
+      $md-grid-gutter:  $grid-gutter-width,
+      $lg-grid-gutter:  0,
+      $xl-grid-gutter:  0,
+      $xxl-grid-gutter: 0
+    );
+
+    @media (min-width: $screen-xl) {
+      padding-left: 100px;
+    }
+  }
+
+  &__form-wrapper {
+    @include col-offset(md, 2);
+    @include col(md, 8);
+    @include col-offset(xl, 0);
+    @include col(xl, 12);
+    padding: 72px 0;
+
+    @media (min-width: $screen-md) {
+      padding: 96px 0;
+    }
+  }
+
+  &__intro {
+    margin-bottom: 40px;
+  }
+
+  &__form {
+
+    button[type=submit] {
+      width: 100%;
+
+      @media (min-width: $screen-xl) {
+        width: auto;
+        min-width: 200px;
+      }
+    }
+
+    textarea.field-text__input {
+
+      @media (min-width: $screen-xl) {
+        min-height: 106px;
+      }
+    }
+  }
+
+  &__input-col {
+    @include col(xs, 12);
+    @include col(md, 12);
+    @include col(xl, 6);
+  }
+
+  &__catalog {
+    @include col-offset(md, 2);
+    @include col(md, 8);
+    @include col-offset(xl, 0);
+    @include col(xl, 12);
+    padding: 72px 0;
+
+    @media (min-width: $screen-md) {
+      padding: 96px 0;
+    }
+
+    img {
+      display: block;
+      width: 274px;
+      height: 212px;
+    }
+  }
+
+  &__catalog-intro {
+    margin-bottom: 24px;
+  }
+
+  &__catalog-action {
+
+    p {
+      margin-top: 0;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__catalog-subtitle {
+    margin-top: 24px !important;
+    margin-bottom: 8px;
+  }
+
+  &__catalog-btn {
+    width: 100%;
+
+    @media (min-width: $screen-xl) {
+      width: auto;
+      min-width: 200px;
+    }
+  }
 }

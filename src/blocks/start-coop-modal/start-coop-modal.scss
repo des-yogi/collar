@@ -1,9 +1,92 @@
-// В этом файле должны быть стили для БЭМ-блока start-coop-modal, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .start-coop-modal {
 
   $block-name:                &; // #{$block-name}__element
 
+  .modal-dialog > *:first-child {
+    margin-top: 10px;
+  }
+
+  &__content {
+
+    .field-text {
+      margin-bottom: 16px;
+    }
+
+    .field-checkbox {
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      min-width: 150px;
+    }
+  }
+
+  &__header {
+    flex-direction: column;
+    margin-bottom: 0;
+    padding-top: 24px;
+    border: none;
+
+    @media (min-width: $screen-md) {
+      padding-top: 40px;
+      padding-right: 40px;
+      padding-left: 40px;
+    }
+  }
+
+  &__header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 16px;
+    text-align: left;
+
+    .close {
+      flex: 0 0;
+      flex-basis: 40px;
+      width: 40px;
+      height: 40px;
+      margin-left: 20px !important;
+    }
+
+    /* span {
+      margin-right: 12px;
+      font-weight: 600;
+    } */
+  }
+
+  &__title {
+    flex: 1 1;
+    flex-basis: auto;
+    // width: 100%;
+    margin-top: 0 !important;
+    margin-bottom: 0;
+    font-size: 28px;
+
+    & + * {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+  &__body {
+
+    @media (min-width: $screen-md) {
+      padding-right: 40px;
+      padding-left: 40px;
+    }
+  }
+
+  &__footer {
+    justify-content: initial;
+    padding: 16px 16px 24px;
+    border: none;
+
+    @media (min-width: $screen-md) {
+      padding-bottom: 40px;
+      padding-right: 40px;
+      padding-left: 40px;
+    }
+  }
 }

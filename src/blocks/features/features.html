@@ -1,14 +1,34 @@
 <!--DEV
-
-Для использования этого файла как шаблона:
-
 @ @include('blocks/features/features.html')
-
-(Нужно убрать пробел между символами @)
-Подробнее: https://www.npmjs.com/package/gulp-file-include
-
-
-
-<div class="features">content</div>
-
 -->
+
+<section class="container  features">
+  <h2 class="visually-hidden">Наши преимущества</h2>
+
+  <ul class="row  list-nostyled  features__list">
+    <li class="features__col">
+      <div class="features__item">
+        <img src="img/smiley.svg" alt="" width="40" height="40" aria-hidden="true" loading="lazy">
+        <span>Персональный <br> менеджер</span>
+      </div>
+    </li>
+    <li class="features__col">
+      <div class="features__item">
+        <img src="img/bag.svg" alt="" width="40" height="40" aria-hidden="true" loading="lazy">
+        <span>Широкий <br> ассортимент</span>
+      </div>
+    </li>
+    <li class="features__col">
+      <div class="features__item">
+        <img src="img/stars.svg" alt="" width="40" height="40" aria-hidden="true" loading="lazy">
+        <span>Инновационные <br> товары</span>
+      </div>
+    </li>
+    <li class="features__col">
+      <div class="features__item">
+        <img src="img/min-price.svg" alt="" width="40" height="40" aria-hidden="true" loading="lazy">
+        <span>Минимальный <br> заказ — 30&thinsp;€</span>
+      </div>
+    </li>
+  </ul>
+</section>

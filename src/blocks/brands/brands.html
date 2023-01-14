@@ -1,0 +1,95 @@
+<!--DEV
+@ @include('blocks/brends/brands.html')
+-->
+
+<section class="brands"  id="brands">
+  <h2 class="container  brands__title">Наши бренды</h2>
+
+  <div class="brands__slider  swiper">
+
+    <div class="swiper-wrapper  brands__slider-wrapper">
+
+        <div class="swiper-slide  brands__slide">
+          <div class="embed-responsive embed-responsive--1-1  brands__slide-img">
+            <picture>
+              <source srcset="img/brand-01.webp" media="(min-width: 1280px)" type="image/webp">
+              <source srcset="img/brand-01.jpg" media="(min-width: 1280px)">
+                <!-- 270x270 -->
+              <source srcset="img/brand-01.webp" media="(min-width: 360px)" type="image/webp">
+              <source srcset="img/brand-01.jpg" media="(min-width: 360px)">
+                <!-- 540x540 -->
+              <img src="img/brand-01.jpg" class="swiper-lazy" alt="Бренд 1" width="540" height="540">
+            </picture>
+            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+          </div>
+          <div class="brands__slide-text">
+            <h3 class="h4 brands__slide-title">Puller</h3>
+            <p class="brands__slide-descr">Тренировочный снаряд для собак</p>
+          </div>
+        </div>
+
+        <div class="swiper-slide  brands__slide">
+          <div class="embed-responsive embed-responsive--1-1  brands__slide-img">
+            <picture>
+              <source srcset="img/brand-02.webp" type="image/webp">
+              <img src="img/brand-02.jpg" class="swiper-lazy" alt="Бренд 1">
+            </picture>
+            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+          </div>
+          <div class="brands__slide-text">
+            <h3 class="h4 brands__slide-title">PitchDog</h3>
+            <p class="brands__slide-descr">Тренировочный снаряд для собак</p>
+          </div>
+        </div>
+
+        <div class="swiper-slide  brands__slide">
+          <div class="embed-responsive embed-responsive--1-1  brands__slide-img">
+            <picture>
+              <source srcset="img/brand-03.webp" type="image/webp">
+              <img src="img/brand-03.jpg" class="swiper-lazy" alt="Бренд 1">
+            </picture>
+            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+          </div>
+          <div class="brands__slide-text">
+            <h3 class="h4 brands__slide-title">Evolutor</h3>
+            <p class="brands__slide-descr">Тренировочный снаряд для собак</p>
+          </div>
+        </div>
+
+        <div class="swiper-slide  brands__slide">
+          <div class="embed-responsive embed-responsive--1-1  brands__slide-img">
+            <picture>
+              <source srcset="img/brand-04.webp" type="image/webp">
+              <img src="img/brand-04.jpg" class="swiper-lazy" alt="Бренд 1">
+            </picture>
+            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+          </div>
+          <div class="brands__slide-text">
+            <h3 class="h4 brands__slide-title">Puller</h3>
+            <p class="brands__slide-descr">Тренировочный снаряд для собак</p>
+          </div>
+        </div>
+
+        <div class="swiper-slide  brands__slide">
+          <div class="embed-responsive embed-responsive--1-1  brands__slide-img">
+            <picture>
+              <source srcset="img/brand-05.webp" type="image/webp">
+              <img src="img/brand-05.jpg" class="swiper-lazy" alt="Бренд 1">
+            </picture>
+            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+          </div>
+          <div class="brands__slide-text">
+            <h3 class="h4 brands__slide-title">Лайкер</h3>
+            <p class="brands__slide-descr">Тренировочный снаряд для собак</p>
+          </div>
+        </div>
+
+    </div>
+
+    <div class="container  swiper-controls">
+      <button class="swiper-button-prev" type="button"></button>
+      <button class="swiper-button-next" type="button"></button>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>

@@ -1,9 +1,37 @@
-// В этом файле должны быть стили для БЭМ-блока top-selling-modal, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .top-selling-modal {
 
   $block-name:                &; // #{$block-name}__element
 
+  .modal-dialog.modal-fullscreen {
+    max-width: none;
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+
+    .close {
+      flex: 0 0;
+      flex-basis: 30px;
+    }
+  }
+
+  &__title {
+    flex: 1 1;
+    flex-basis: auto;
+    margin-right: 24px;
+    //@include text-hide;
+  }
+
+  &__footer {
+    padding: 16px;
+
+    .btn {
+      min-width: 200px;
+
+      @media (max-width: $screen-md - 1) {
+        width: 100%;
+      }
+    }
+  }
 }

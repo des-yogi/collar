@@ -52,30 +52,22 @@ if(~navigator.appVersion.indexOf("Linux"))cth('linux');
   //<div style="background-image: url('/images/image.webp')" data-bg="/images/image.jpg" data-bg-webp="/images/image.webp"></div>
 }());
 
-// Если на проекте jQuery
-// $( document ).ready(function() {
-//   // code
-// });
+(function(){
+  const bLazy = new Blazy({
+    selector: '.b-lazy' // all images
+  });
+}());
 
-// Изоляция без jQuery
-// (function(){
-//   // code
-// }());
-
-// На проекте нет jQuery, но хочется $( document ).ready...
-// function ready(fn) {
-//   if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
-//     fn();
-//   } else {
-//     document.addEventListener('DOMContentLoaded', fn);
-//   }
-// }
-//
-// ready(function(){
-//   // code
-// });
-
-
+(function(){
+  const phoneElems = document.getElementsByClassName('phone-mask');
+  Array.prototype.forEach.call(phoneElems, function (item) {
+    const phoneMask = IMask(
+      item, {
+        mask: '+{48} \\000 000 00 00',
+        lazy: false // make placeholder always visible if false
+    });
+  });
+}());
 
 // $(document).ready(function(){
 //   if(window.matchMedia('(min-width: 1366px)').matches){

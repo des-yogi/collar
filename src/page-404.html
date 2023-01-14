@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html class="no-js  page" lang="ru" prefix="og: https://ogp.me/ns#">
+
+<head>
+  <meta charset="utf-8">
+  <title>Collar 404 Error page</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+<noscript>У вас отключен JavaScript. Приносим наши извинения, но это делает затруднительным использование данного сайта.</noscript>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+
+      @@include('blocks/page-header/page-header.html', {
+        "addClass": ""
+      })
+
+      <main class="main-content">
+
+        <div class="container  page-404">
+          <div class="row">
+
+            <div class="page-404__text-col">
+              <div class="page-404__text">
+                <h1 class="page-404__title">Сторінку не знайдено!</h1>
+                <p class="page-404__intro">
+                  Можливо, ця сторінка була видалена або ви скористалися недійсним посиланням. Щоб продовжити роботу з сайтом, скористайтеся основним меню або перейдіть на головну сторінку.
+                </p>
+                <a href="index.html" class="btn">
+                  <span>На головну</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="page-404__img-col">
+              <div class="page-404__img">
+                <img src="img/error-404m.svg" alt="" loading="lazy">
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+
+
+  @@include('blocks/mob-nav-modal/mob-nav-modal.html')
+
+  @@include('blocks/start-coop-modal/start-coop-modal.html')
+
+  @@include('blocks/top-selling-modal/top-selling-modal.html')
+
+
+  @@include('_include/page_bottom.html')
+
+</body>
+</html>

@@ -1,9 +1,85 @@
-// В этом файле должны быть стили для БЭМ-блока top-selling, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .top-selling {
+  padding-bottom: 72px;
+
+  @media (min-width: $screen-md) {
+    padding-bottom: 128px;
+  }
 
   $block-name:                &; // #{$block-name}__element
 
+  .swiper-controls {
+    margin-bottom: 32px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__wrapper-col {
+    @include col(xs, 12);
+    @include col-offset(md, 2);
+    @include col(md, 8);
+    @include col-offset(xl, 0);
+    @include col(xl, 12);
+  }
+
+  &__slide-inner-row {
+    @include row(
+      $xs-grid-gutter:  0,
+      $sm-grid-gutter:  0,
+      $md-grid-gutter:  0,
+      $lg-grid-gutter:  0,
+      $xl-grid-gutter:  $grid-gutter-width,
+      $xxl-grid-gutter: $grid-gutter-width
+    );
+
+    @media (min-width: $screen-xl) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__title {
+    margin-bottom: 32px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__slide-text-col {
+    @include col(xl, 5.4);
+  }
+
+  &__slide-img-col {
+    @include col(xl, 6);
+
+    @media (max-width: $screen-xl - 1) {
+      display: none;
+    }
+  }
+
+  &__slide-title {
+    margin-bottom: 24px;
+  }
+
+  &__slide-intro {
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+
+  &__slide-figure {
+    margin: 24px 0;
+
+    @media (min-width: $screen-xl) {
+      display: none;
+    }
+  }
+
+  &__slide-img {
+
+    img {
+      object-fit: contain;
+      object-position: center;
+    }
+  }
 }

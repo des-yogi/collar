@@ -1,9 +1,64 @@
-// В этом файле должны быть стили для БЭМ-блока hero, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .hero {
+  position: relative;
+  width: 100%;
+  height: 640px;
+  margin-top: -104px;
+  background-color: grey;
+  overflow: hidden;
+
+  @media (min-width: $screen-md) {
+    height: 1024px;
+  }
 
   $block-name:                &; // #{$block-name}__element
 
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 65% top;
+
+    @media (min-width: $screen-md) {
+      object-position: 85% top;
+    }
+
+    @media (min-width: $screen-xl) {
+      object-position: 68% top;
+    }
+
+    @media (min-width: 1920px) {
+      object-position: 50% top;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: 135px;
+    padding-bottom: 40px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 100%);
+
+    @media (min-width: $screen-md) {
+      align-items: flex-end;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-bottom: 64px;
+    }
+  }
+
+  &__link {
+    width: 100%;
+
+    @media (min-width: $screen-md) {
+      width: 280px;
+    }
+  }
 }

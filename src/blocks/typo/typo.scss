@@ -92,6 +92,10 @@ h3,
 h4 {
   margin-top: 48px;
   margin-bottom: 16px;
+
+  @media (min-width: $screen-xl) {
+    margin-top: 64px;
+  }
 }
 
 
@@ -99,7 +103,7 @@ h4 {
 .h6,
 h5,
 h6 {
-  margin-top: 48px;
+  margin-top: 1.5em;
   margin-bottom: 0;
 }
 
@@ -107,7 +111,11 @@ div,
 section,
 article {
 
-  & > *:first-child {
+  & > h2:first-child,
+  & > h3:first-child,
+  & > h4:first-child,
+  & > h5:first-child,
+  & > h6:first-child {
     margin-top: 0;
   }
 }
@@ -140,6 +148,23 @@ h5 {
 .h6,
 h6 {
   font-size: $font-size--h6;
+}
+
+.display-1 {
+  //margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: $white;
+
+  @media (min-width: $screen-md) {
+    font-size: 52px;
+  }
+
+  @media (min-width: $screen-xl) {
+    font-size: 86px;
+  }
 }
 
 .p,
@@ -231,9 +256,31 @@ abbr[title] {
 }
 
 blockquote {
-  padding: 0;
+  position: relative;
+  padding: 64px 24px;
+  margin-top: 50px;
   margin-left: 0;
   margin-right: 0;
+  background-color: $block-bg;
+
+  @media (min-width: $screen-xl) {
+    padding: 64px 48px;
+  }
+
+  &::before {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 48px;
+    top: -26px;
+    width: 52px;
+    height: 52px;
+    background-color: $black;
+    background-size: 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: svg-load('../blocks/sprite-svg/svg/quotes.svg', fill=$white);
+  }
 }
 
 dt {

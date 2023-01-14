@@ -31,10 +31,10 @@ $text-muted:                  #808080;
 $body-bg:                     #ffffff;
 $block-bg:                    #f5f5f5;
 
-$link-color:                  $main-color;
+$link-color:                  $secondary-color;
 $link-color--hover:           $link-color;
 
-$border-color:                $text-muted; //#cccccc
+$border-color:                rgba(0, 0, 0, 0.2); //#cccccc
 $divider-color:               $main-color;
 
 $color-success:               hsl(120, 39%, 54%);
@@ -44,6 +44,7 @@ $color-warning:               hsl(35, 84%, 62%);
 // базовая типографика
 
 $font-size:                   16px;
+$font-size-sm:                14px;
 
 $font-size--h1:               48px;
 $font-size--h2:               40px;
@@ -86,7 +87,7 @@ $grid-gutter-width:           32px;
 
 // разное
 
-$field-padding-vertical:      15px;
+$field-padding-vertical:      13px;
 $field-padding-horizontal:    16px;
 
 $border-radius:               0;
