@@ -10,9 +10,12 @@
     //
     // Update the modal's content.
     const modalTitle = orderModal.querySelector('.modal-title');
-    //var modalBodyInput = exampleModal.querySelector('.modal-body input');
+    const categoryInput = orderModal.querySelector('input[name="category"]');
 
     modalTitle.textContent = recipient;
-    //modalBodyInput.value = recipient
+    if (categoryInput) {
+      let inputValue = recipient.split(': ').pop().trim();
+      categoryInput.value = inputValue;
+    }
   })
 }());
