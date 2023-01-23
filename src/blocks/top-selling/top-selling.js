@@ -1,6 +1,9 @@
 (function(){
   const topSelling = new Swiper('.top-selling__slider', {
     loop: true,
+    autoplay: {
+      delay: 4000,
+    },
     spaceBetween: 32,
     slidesPerView: 1,
     preloadImages: false,
