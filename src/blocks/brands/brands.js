@@ -1,6 +1,9 @@
 (function(){
   const brands = new Swiper('.brands__slider', {
     loop: true,
+    autoplay: {
+      delay: 4000,
+    },
     spaceBetween: 32,
     slidesPerView: 'auto',
     preloadImages: false,
