@@ -35,7 +35,7 @@
 
   &__logo-col {
     @include col(xs, 4);
-    @include col(xl, 8);
+    @include col(xl, 7.6);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -44,7 +44,7 @@
 
   &__service-col {
     @include col(xs, 8);
-    @include col(xl, 4);
+    @include col(xl, 4.4);
     display: flex;
     align-items: center;
     justify-content: flex-end;
